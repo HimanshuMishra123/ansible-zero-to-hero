@@ -17,16 +17,17 @@ The main list of actions that the role performs.
 ### Handlers
 Ansible Tasks that are triggered by changes in other tasks (means you want to execute an action after some task so just notify the handler to run), typically used for actions like restarting services.
 ```yaml
-tasks:
+# tasks/main.yml
 - name: Template configuration file
   ansible.builtin.template:
     src: template.j2
     dest: /etc/foo.conf
-  notify:                         # call handlers
+  notify:                         # To call handlers
     - Restart apache
     - Restart memcached
-
-handlers:
+```
+```yaml
+# handlers/main.yml
   - name: Restart memcached
     ansible.builtin.service:
       name: memcached
