@@ -26,7 +26,7 @@ Any method can be used based on your organization(how they prefer).
      ```
 
 1(b). **Copying SSH Keys using PEM File (for AWS instances) to Target VM**
-   - **Step 1**: Ensure you have the PEM file (private key) which is used to create the AWS instance.
+   - **Step 1**: Ensure you have the PEM file (private key) which is used to create the AWS instance(target VM).
    - **Step 2**: Copy the SSH public key to the managed node using the PEM file.
      ```bash
      ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
