@@ -69,3 +69,6 @@ Any method can be used based on your organization(how they prefer).
      ```bash
      ssh user@target_node_ip
      ```
+
+
+You have successfully configured your control node (your laptop with Ansible) to communicate with your managed/target nodes without requiring a password. This enables Ansible to execute user instructions through YAML files(playbooks) or ad-hoc commands seamlessly. Now, Ansible operations can be automated through Jenkins, scheduled to run at night using Cron jobs, or you can schedule your anible playbooks they will execute without any Interruption and they will just notify you that the execution is successful.
