@@ -135,7 +135,7 @@ Place your Ansible role files in the appropriate directory structure as mentione
 │   │       │   └── my_config.conf.j2
 │   │       └── vars
 │   │           └── main.yml
-├── inventory
+├── inventory.ini
 ├── terraform
 │   ├── main.tf
 │   └── variables.tf
