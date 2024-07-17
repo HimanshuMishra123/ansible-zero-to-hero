@@ -30,8 +30,14 @@ But in real world you will not use openssl, org. will provide some other better 
 ```
 ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
 ```
-Creates and Encrypts a File: It creates a new file named pass.yml and opens it in an editor. The file will be encrypted using the password specified in vault.pass when you save it(:wq!). <br/>
 
+Creates and Encrypts a File: It creates a new file named pass.yml and opens it in an editor. The file will be encrypted using the password specified in vault.pass when you save it(:wq!). <br/>
+```yaml
+#in editor
+
+access_key: YOUR_ACCESS_KEY
+secret_key: YOUR_SECRET_KEY
+```
 The command does not create a file inside the vault but rather creates and encrypts the pass.yml file using the vault's encryption mechanism. The file will be saved on your filesystem and will be readable only after decryption with the correct password.<br/>
 
 
