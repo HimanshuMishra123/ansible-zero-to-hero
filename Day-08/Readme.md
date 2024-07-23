@@ -57,6 +57,10 @@ To conditionally run tasks based on the success or failure of previous tasks, us
 
 In this example, Docker will be installed only if the check for Docker's presence fails.
 
+you can iterate through the output using builtin debug command to write Install docker task-
+![Day-8 _ Error Handling in Ansible Playbooks _ Demo included 26-17 screenshot](https://github.com/user-attachments/assets/2a825c53-07d6-4b91-97e4-7195ff17b9c5)
+
+
 #### Practical Demonstration
 1. **Setup Inventory:**
 
