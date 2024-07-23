@@ -114,6 +114,8 @@ Sometimes, you might want to ignore specific types of errors. For this, you can 
 ```
 
 In this example, the task will fail only if the error message does not contain "No such file or directory".
+![Day-8 _ Error Handling in Ansible Playbooks _ Demo included 33-1 screenshot](https://github.com/user-attachments/assets/8ef51fa8-88ec-4895-b7d6-bd2771d6787e)
+
 
 ### Conclusion
 By leveraging error handling techniques such as `ignore_errors`, `register`, and `failed_when`, you can create more flexible and robust Ansible playbooks. These practices ensure your playbooks can handle a variety of scenarios gracefully, improving the overall automation and configuration management processes.
