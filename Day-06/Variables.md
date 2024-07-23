@@ -1,5 +1,40 @@
 ## Detailed Notes on Ansible Variables
 
+Ansible Repository Structure
+---------------------------------
+|
+|-- inventory/
+|   |-- hosts
+|   |-- group_vars/
+|       |-- all.yml
+|       |-- app.yml
+|       |-- db.yml
+|
+|-- roles/
+|   |-- role1/
+|   |   |-- defaults/
+|   |   |   |-- main.yml
+|   |   |-- vars/
+|   |   |   |-- main.yml
+|   |   |-- tasks/
+|   |   |   |-- main.yml
+|   |-- role2/
+|       |-- defaults/
+|       |   |-- main.yml
+|       |-- vars/
+|       |   |-- main.yml
+|       |-- tasks/
+|           |-- main.yml
+|
+|-- playbooks/
+|   |-- playbook1.yml
+|   |-- playbook2.yml
+|
+|-- ansible.cfg
+|-- requirements.yml
+|-- README.md
+
+
 ### Introduction
 Variables in Ansible allow you to write more flexible and reusable playbooks. Hardcoding values can lead to limitations and rigidity in your playbooks. By utilizing variables, you can share your playbooks with others who might have different requirements, such as different instance types or operating systems.
 
@@ -70,6 +105,36 @@ password: db_password
 ```
 These variables are used based on the group the host belongs to, as defined in the inventory file.
 
+### Registered Variables
+
+**Example**:
+
+```yaml
+# playbooks/registered_vars_playbook.yml
+- name: Example playbook
+  hosts: all
+  tasks:
+    - name: Run a command and register the output
+      command: /bin/echo "Hello, Ansible!"
+      register: echo_result
+    - name: Print the command output
+      debug:
+        msg: "{{ echo_result.stdout }}"
+```
+
+**Location in Repo**:
+- `playbooks/registered_vars_playbook.yml`
+
+### Host Variables
+
+**Inventory File (INI Format)**:
+```ini
+# inventory/hosts
+[webservers]
+web1 ansible_host=192.168.1.100 example_var="Host specific variable"
+```
+
+
 ### Variable Precedence
 Understanding the precedence of variables is crucial for managing complex playbooks. The general order from lowest to highest precedence is:
 1. Role defaults
@@ -78,7 +143,10 @@ Understanding the precedence of variables is crucial for managing complex playbo
 4. Role vars
 5. Block vars
 6. Task vars (only for the task)
-7. Extra vars (always win)
+7. Extra vars (always win, highest precedence)
+
+there are total 22 defined variable types to read more refer ansible doc.. https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html
+
 
 ### Practical Example
 Let's create an EC2 instance using variables declared at different levels:
