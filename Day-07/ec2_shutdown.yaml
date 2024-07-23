@@ -7,3 +7,24 @@
       ansible.builtin.command: /sbin/shutdown -t now
       when:
        ansible_facts['os_family'] == "Debian"
+
+
+
+----------------or
+
+```yaml
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Gather facts
+      ansible.builtin.setup:
+
+    - name: Shutdown Ubuntu instances only
+      ansible.builtin.command: /sbin/shutdown -t now
+      when: ansible_facts['os_family'] == "Debian" and ansible_facts['distribution'] == "Ubuntu"
+```
+
+Explanation:
+- The `ansible.builtin.setup` task gathers all facts about the host, including OS family and distribution and you can check the output using debug command and itterate through it as per need.
+- The `when` condition is updated to check both `os_family` and `distribution` to ensure the task only runs on Ubuntu instances.
