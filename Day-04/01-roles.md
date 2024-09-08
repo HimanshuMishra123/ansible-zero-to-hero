@@ -53,7 +53,7 @@ These are static files that you can copy to remote hosts using the 'copy' module
 
 ### Templates
 Notes- Files and Template serves same purpose to keep files. Files used to keep static files whereas Templates is used to keep Dynamic files(where you want to keep some values in the file Dynamic).<br/>
-Folder in an Ansible role is used to store Jinja2 templating language files, which can be used to dynamically generate configuration files.<br/>
+Templates folder in an Ansible role is used to store Jinja2 templating language files, which can be used to dynamically generate configuration files.<br/>
 This enable dynamic content generation where You can include variables, control structures, and other dynamic elements in a template. Use `templates` when you need to customize the content of the file based on variables or other conditions at runtime. (Example - used to dynamically generate configuration files)
 
 ### Vars
