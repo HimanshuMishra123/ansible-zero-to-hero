@@ -1,5 +1,5 @@
 ## Detailed Notes on Ansible Variables
-
+'''
 Ansible Repository Structure
 ---------------------------------
 |
@@ -33,7 +33,7 @@ Ansible Repository Structure
 |-- ansible.cfg
 |-- requirements.yml
 |-- README.md
-
+'''
 
 ### Introduction
 Variables in Ansible allow you to write more flexible and reusable playbooks. Hardcoding values can lead to limitations and rigidity in your playbooks. By utilizing variables, you can share your playbooks with others who might have different requirements, such as different instance types or operating systems.
