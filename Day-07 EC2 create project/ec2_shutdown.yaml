@@ -21,7 +21,7 @@
       ansible.builtin.setup:
 
     - name: Display all gathered facts
-      debug:
+      ansible.builtin.debug:
         var: ansible_facts
     # display all collected facts (as in above task all gathered facts are stored in variable called ansible_facts by default)
     - name: Shutdown Ubuntu instances only
