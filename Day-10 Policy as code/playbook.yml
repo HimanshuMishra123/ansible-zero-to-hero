@@ -16,3 +16,4 @@
         name: "{{ item.name }}"
         versioning: yes
       loop: "{{ result.buckets }}" 
+      

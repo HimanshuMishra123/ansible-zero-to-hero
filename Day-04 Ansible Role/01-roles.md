@@ -9,7 +9,28 @@ a particular system or application component.
 This modular approach promotes reusability, maintainability, and consistency across different 
 playbooks and environments.
 
-## Key Components of an Ansible Role
+## Directory Structure of an Ansible Role
+
+An Ansible role follows a specific directory structure:
+
+```
+<role_name>/
+  ├── defaults/
+  │   └── main.yml
+  ├── files/
+  ├── handlers/
+  │   └── main.yml
+  ├── meta/
+  │   └── main.yml
+  ├── tasks/
+  │   └── main.yml
+  ├── templates/
+  ├── vars/
+  │    └── main.yml
+  ├── templates/
+│   └── my_config.conf.j2
+```
+
 
 ### Tasks
 The main list of actions that the role performs.
@@ -74,27 +95,6 @@ Default module parameters for the role.
 ### Lookup_plugins
 Custom lookup plugins for the role.
 
-## Directory Structure of an Ansible Role
-
-An Ansible role follows a specific directory structure:
-
-```
-<role_name>/
-  ├── defaults/
-  │   └── main.yml
-  ├── files/
-  ├── handlers/
-  │   └── main.yml
-  ├── meta/
-  │   └── main.yml
-  ├── tasks/
-  │   └── main.yml
-  ├── templates/
-  ├── vars/
-  │    └── main.yml
-  ├── templates/
-│   └── my_config.conf.j2
-```
 
 ## Why Use Ansible Roles?
 
