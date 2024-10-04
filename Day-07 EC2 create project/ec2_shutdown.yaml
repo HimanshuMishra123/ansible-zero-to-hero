@@ -20,6 +20,10 @@
     - name: Gather facts
       ansible.builtin.setup:
 
+    - name: Display all gathered facts
+      debug:
+        var: ansible_facts
+    # display all collected facts (as in above task all gathered facts are stored in variable called ansible_facts by default)
     - name: Shutdown Ubuntu instances only
       ansible.builtin.command: /sbin/shutdown -t now
       when: ansible_facts['os_family'] == "Debian" and ansible_facts['distribution'] == "Ubuntu"
