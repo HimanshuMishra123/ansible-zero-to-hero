@@ -118,7 +118,7 @@ Sometimes, you might want to ignore specific types of errors. For this, you can 
   failed_when: "'No such file or directory' not in ls_output.stderr"
 ```
 
-In this example, the task will fail only if the error message does not contain "No such file or directory".(in other words, agar error msg ye hai toh task execute hoga ya aise bolo ki agar error msg ye nhi hai toh task fail show hoga else consider it a success and run further tasks)
+In this example, the task will fail only if the error message does not contain "No such file or directory".(in other words, agar error msg ye hai ls_output.stderr mein toh agge ke task execute hoge ya aise bolo ki agar error msg ye nhi hai toh task fail show hoga and aage koi task execute nhi hoga)
 
 ![Day-8 _ Error Handling in Ansible Playbooks _ Demo included 33-1 screenshot](https://github.com/user-attachments/assets/8ef51fa8-88ec-4895-b7d6-bd2771d6787e)
 
