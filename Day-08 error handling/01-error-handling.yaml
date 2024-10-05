@@ -12,7 +12,8 @@
         - openssh
       ignore_errors: yes 
     - name: Check if docker is installed
-      ansible.builtin.command: docker --version
+      ansible.builtin.command: 
+      docker --version
       register: output         # 'register' is used to store/register the output of the command in a variable, here in 'output' variable            
       ignore_errors: yes    
     - ansible.builtin.debug:
