@@ -23,7 +23,5 @@
       - { image: "ami-0e1d06225679bc1c5", name: "manage-node-1" } # Update AMI ID according 
       - { image: "ami-0f58b397bc5c1f2e8", name: "manage-node-2" } # to your account
       - { image: "ami-0f58b397bc5c1f2e8", name: "manage-node-3" }
-
-
-In loop, task is executed by taking list items one by one.
-While creating/provisiong AWS infra you don't need inventory file. so just give command>> ansible-playbook ec2_playbook.yml
+#In loop, task is executed by taking list items one by one.
+#While creating/provisiong AWS infra you don't need inventory file. so just give command>> ansible-playbook ec2_playbook.yml
